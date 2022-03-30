@@ -1,4 +1,4 @@
-package ru.ifr0z.notify.custom
+package com.kp65.workmanager.custom
 
 import android.content.Context
 import android.os.Build.VERSION.SDK_INT

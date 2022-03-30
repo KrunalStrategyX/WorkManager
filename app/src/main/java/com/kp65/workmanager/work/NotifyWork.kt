@@ -1,4 +1,4 @@
-package ru.ifr0z.notify.work
+package com.kp65.workmanager.work
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -23,9 +23,9 @@ import androidx.core.app.NotificationCompat.PRIORITY_MAX
 import androidx.work.ListenableWorker.Result.success
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import ru.ifr0z.notify.MainActivity
+import com.kp65.workmanager.MainActivity
+import com.kp65.workmanager.extension.vectorToBitmap
 import ru.ifr0z.notify.R
-import ru.ifr0z.notify.extension.vectorToBitmap
 
 class NotifyWork(context: Context, params: WorkerParameters) : Worker(context, params) {
 

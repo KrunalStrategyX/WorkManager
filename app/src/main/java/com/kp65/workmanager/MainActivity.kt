@@ -1,4 +1,4 @@
-package ru.ifr0z.notify
+package com.kp65.workmanager
 
 import android.os.Bundle
 import android.view.View
@@ -7,10 +7,11 @@ import androidx.work.Data
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
+import com.kp65.workmanager.work.NotifyWork
+import com.kp65.workmanager.work.NotifyWork.Companion.NOTIFICATION_ID
+import com.kp65.workmanager.work.NotifyWork.Companion.NOTIFICATION_WORK
 import kotlinx.android.synthetic.main.activity_main.*
-import ru.ifr0z.notify.work.NotifyWork
-import ru.ifr0z.notify.work.NotifyWork.Companion.NOTIFICATION_ID
-import ru.ifr0z.notify.work.NotifyWork.Companion.NOTIFICATION_WORK
+import ru.ifr0z.notify.R
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
@@ -40,15 +41,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     fun autoSync(view: View) {
         setAutoNotification()
     }
 
-    private fun setAutoNotification(){
+    private fun setAutoNotification() {
         val data = Data.Builder().putInt(NOTIFICATION_ID, 0).build()
 
-        val req = PeriodicWorkRequest.Builder(NotifyWork::class.java,20, TimeUnit.MINUTES)
+        val req = PeriodicWorkRequest.Builder(NotifyWork::class.java, 20, TimeUnit.MINUTES)
             .setInputData(data)
             .addTag(NOTIFICATION_WORK)
             .build()
