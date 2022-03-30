@@ -1,12 +1,9 @@
 <resources>
-    <string name="app_name">Notify</string>
+    <string name="app_name">Work Manager</string>
 
-    <string name="notification_title">Reminder</string>
-    <string name="notification_subtitle">Surprise!</string>
+    <string name="notification_title">Hello</string>
+    <string name="notification_subtitle">Your Work Manager Notification</string>
 
-    <string name="notification_schedule_title">Schedule notification:\u00a0</string>
-    <string name="notification_schedule_pattern">dd.MM.yy \u00B7 HH:mm</string>
-    <string name="notification_schedule_error">
-        Schedule notification: Incorrect Date and Time
-    </string>
+    <string name="manual_notification">Manual Notification</string>
+    <string name="auto_notification">Auto Notification</string>
 </resources>

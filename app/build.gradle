@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 31
     defaultConfig {
-        applicationId "ru.ifr0z.notify"
+        applicationId "com.kp65.workmanager"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1

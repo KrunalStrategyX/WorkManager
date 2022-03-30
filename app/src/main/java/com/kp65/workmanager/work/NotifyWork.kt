@@ -24,8 +24,10 @@ import androidx.work.ListenableWorker.Result.success
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.kp65.workmanager.MainActivity
+import com.kp65.workmanager.R
 import com.kp65.workmanager.extension.vectorToBitmap
-import ru.ifr0z.notify.R
+
+
 
 class NotifyWork(context: Context, params: WorkerParameters) : Worker(context, params) {
 
@@ -44,12 +46,12 @@ class NotifyWork(context: Context, params: WorkerParameters) : Worker(context, p
         val notificationManager =
             applicationContext.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
-        val bitmap = applicationContext.vectorToBitmap(R.drawable.ic_schedule_black_24dp)
+        val bitmap = applicationContext.vectorToBitmap(R.drawable.ic_notifications_black)
         val titleNotification = applicationContext.getString(R.string.notification_title)
         val subtitleNotification = applicationContext.getString(R.string.notification_subtitle)
         val pendingIntent = getActivity(applicationContext, 0, intent, 0)
         val notification = NotificationCompat.Builder(applicationContext, NOTIFICATION_CHANNEL)
-            .setLargeIcon(bitmap).setSmallIcon(R.drawable.ic_schedule_white)
+            .setLargeIcon(bitmap).setSmallIcon(R.drawable.ic_notifications_white)
             .setContentTitle(titleNotification).setContentText(subtitleNotification)
             .setDefaults(DEFAULT_ALL).setContentIntent(pendingIntent).setAutoCancel(true)
 
@@ -77,9 +79,10 @@ class NotifyWork(context: Context, params: WorkerParameters) : Worker(context, p
     }
 
     companion object {
-        const val NOTIFICATION_ID = "appName_notification_id"
-        const val NOTIFICATION_NAME = "appName"
-        const val NOTIFICATION_CHANNEL = "appName_channel_01"
-        const val NOTIFICATION_WORK = "appName_notification_work"
+        const val NOTIFICATION_ID = "WORK_MANAGER_NOTIFICATION_ID"
+        const val NOTIFICATION_NAME = "WORK_MANGER"
+        const val NOTIFICATION_CHANNEL = "WORK_MANAGER_CHANNEL_01"
+        const val MANUAL_WORKER_NAME = "MANUAL_WORKER_NAME"
+        const val PERIODIC_WORKER_NAME = "PERIODIC_WORKER_NAME"
     }
 }
